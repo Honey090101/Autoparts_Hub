@@ -68,12 +68,12 @@
                                     </a>
                                     <ul class="sub-menu">
                                         <li class="sub-menu-item">
-                                            <a href="add-product.html" class="">
+                                            <a href="{{route('admin.product.add')}}" class="">
                                                 <div class="text">Add Product</div>
                                             </a>
                                         </li>
                                         <li class="sub-menu-item">
-                                            <a href="products.html" class="">
+                                            <a href="{{route('admin.products')}}" class="">
                                                 <div class="text">Products</div>
                                             </a>
                                         </li>
@@ -86,7 +86,7 @@
                                     </a>
                                     <ul class="sub-menu">
                                         <li class="sub-menu-item">
-                                            <a href="add-brand.html" class="">
+                                            <a href="{{ route('admin.brand.add')}}" class="">
                                                 <div class="text">New Brand</div>
                                             </a>
                                         </li>
@@ -104,12 +104,12 @@
                                     </a>
                                     <ul class="sub-menu">
                                         <li class="sub-menu-item">
-                                            <a href="add-category.html" class="">
+                                            <a href="{{ route('admin.category.add')}}" class="">
                                                 <div class="text">New Category</div>
                                             </a>
                                         </li>
                                         <li class="sub-menu-item">
-                                            <a href="categories.html" class="">
+                                            <a href="{{ route('admin.categories')}}" class="">
                                                 <div class="text">Categories</div>
                                             </a>
                                         </li>
@@ -135,15 +135,15 @@
                                     </ul>
                                 </li>
                                 <li class="menu-item">
-                                    <a href="slider.html" class="">
+                                    <a href="inventory.html" class="">
                                         <div class="icon"><i class="icon-image"></i></div>
-                                        <div class="text">Slider</div>
+                                        <div class="text">Inventory</div>
                                     </a>
                                 </li>
                                 <li class="menu-item">
-                                    <a href="coupons.html" class="">
+                                    <a href="supplier.html" class="">
                                         <div class="icon"><i class="icon-grid"></i></div>
-                                        <div class="text">Coupons</div>
+                                        <div class="text">Supplier</div>
                                     </a>
                                 </li>
 
