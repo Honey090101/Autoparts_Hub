@@ -61,7 +61,7 @@
                                                     <td>{{ $product->id }}</td>
                                                     <td class="pname">
                                                         <div class="image">
-                                                        <img src="{{ asset('uploads/products/thumbnails' . $product->image) }}" alt="{{ $product->name }}" width="50"></div>
+                                                        <img src="{{ asset('uploads/products/' . $product->image) }}" alt="{{ $product->name }}" width="50">
                                                         <div class="name">
                                                             <a href="#" class="body-title-2">{{$product->name}}</a>
                                                             <div class="text-tiny mt-3">{{$product->slug}}</div>
@@ -82,15 +82,17 @@
                                                                     <i class="icon-eye"></i>
                                                                 </div>
                                                             </a>
-                                                            <a href="#">
+                                                            <a href="{{ route('admin.product.edit', $product->id) }}">
                                                                 <div class="item edit">
                                                                     <i class="icon-edit-3"></i>
                                                                 </div>
                                                             </a>
-                                                            <form action="#" method="POST">
-                                                                <div class="item text-danger delete">
-                                                                    <i class="icon-trash-2"></i>
-                                                                </div>
+                                                            <form action="{{ route('admin.product.delete', $product->id) }}" method="POST" onsubmit="return confirm('Are you sure you want to delete this product?');">
+                                                                 @csrf
+                                                                 @method('DELETE')
+                                                                    <button type="submit" class="item text-danger delete" style="background: none; border: none; cursor: pointer;">
+                                                                        <i class="icon-trash-2"></i>
+                                                                    </button>
                                                             </form>
                                                         </div>
                                                     </td>

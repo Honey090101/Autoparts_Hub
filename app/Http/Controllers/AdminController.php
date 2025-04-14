@@ -21,7 +21,7 @@ class AdminController extends Controller
 
     public function brands()
     {
-        $brands = Brand::orderBy('id', 'DESC')->paginate(10);
+        $brands = Brand::orderBy('id', 'ASC')->paginate(10);
         return view('admin.brands', compact('brands'));
     }
 
@@ -126,7 +126,7 @@ class AdminController extends Controller
 
     public function categories()
     {
-        $categories = Category::orderBy('id', 'DESC')->paginate(10);
+        $categories = Category::orderBy('id', 'ASC')->paginate(10);
         return view('admin.categories', compact('categories'));
     }
 
@@ -231,7 +231,7 @@ class AdminController extends Controller
 
     public function products()
     {
-        $products = Product::orderBy('created_at', 'DESC')->paginate(10);
+        $products = Product::orderBy('created_at', 'ASC')->paginate(10);
         return view('admin.products', compact('products'));
     }
 
@@ -355,8 +355,8 @@ public function product_update(Request $request)
 
     $product = Product::find($request->id);
     
-    if (!$product) {
-        return redirect()->route('admin.products')->with('error', 'Product not found!');
+   if (!$product) {
+    return redirect()->route('admin.products')->with('error', 'Product not found!');
     }
     
     $product->name = $request->name;
