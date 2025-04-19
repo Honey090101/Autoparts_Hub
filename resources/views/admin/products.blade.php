@@ -93,7 +93,7 @@
                                                                     <button type="submit" class="item text-danger delete" style="background: none; border: none; cursor: pointer;">
                                                                         <i class="icon-trash-2"></i>
                                                                     </button>
-                                                            </form>
+                                                        </form>
                                                         </div>
                                                     </td>
                                                 </tr>

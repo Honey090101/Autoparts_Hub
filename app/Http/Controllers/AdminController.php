@@ -11,7 +11,7 @@ use Illuminate\Support\Str;
 use Illuminate\Support\Facades\File;
 use Intervention\Image\ImageManager;
 use Intervention\Image\Drivers\Gd\Driver;
-
+use Illuminate\Support\Facades\Log;
 class AdminController extends Controller
 {
     public function index()
@@ -230,10 +230,10 @@ class AdminController extends Controller
     }
 
     public function products()
-    {
-        $products = Product::orderBy('created_at', 'ASC')->paginate(10);
-        return view('admin.products', compact('products'));
-    }
+{
+    $products = Product::with(['category', 'brand'])->orderBy('created_at', 'ASC')->paginate(10);
+    return view('admin.products', compact('products'));
+}
 
     public function product_add()
 {
@@ -244,6 +244,8 @@ class AdminController extends Controller
 
     public function product_store(Request $request)
 {
+    Log::info('Update product request data:', $request->all());
+    
     $request->validate([
         'name' => 'required',
         'slug' => 'required|unique:products,slug',
@@ -337,6 +339,8 @@ public function product_edit($id)
 
 public function product_update(Request $request)
 {
+    Log::info('Update product request data:', $request->all());
+
     $request->validate([
         'name' => 'required',
         'slug' => 'required|unique:products,slug,' . $request->id,
@@ -419,7 +423,7 @@ public function product_update(Request $request)
     return redirect()->route('admin.products')->with('status', 'Product has been updated successfully!');
 }
 
-public function product_delete($id)
+public function product_delete($id) 
 {
     $product = Product::find($id);
     

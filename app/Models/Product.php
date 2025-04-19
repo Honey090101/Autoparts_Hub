@@ -11,11 +11,11 @@ class Product extends Model
 
     public function category()
     {
-        return $this->belongsTo(Category::class,"categoty_id");
+    return $this->belongsTo(Category::class);
     }
 
     public function brand()
     {
-        return $this->belongsTo(Brand::class,"brand_id");
+        return $this->belongsTo(Brand::class);
     }
 }
