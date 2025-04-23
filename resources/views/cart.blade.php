@@ -15,7 +15,7 @@
         <a href="javascript:void(0)" class="checkout-steps__item">
           <span class="checkout-steps__item-number">02</span>
           <span class="checkout-steps__item-title">
-            <span>Shipping and Checkout</span>
+            <span>Checkout</span>
             <em>Checkout Your Items List</em>
           </span>
         </a>
